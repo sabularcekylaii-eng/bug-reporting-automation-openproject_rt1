@@ -2,7 +2,7 @@
 
 Turns a Google Sheet into a bug intake queue. Fill in a row, run the app,
 and it creates an OpenProject ticket, then a linked RT1 ticket that's
-automatically resolved — no manual ticket entry in either system.
+automatically resolved.
 
 ## How it works
 
@@ -91,12 +91,3 @@ python app.py
 ```
 
 Click **Run Now** to process all pending rows.
-
-## Notes
-
-- `.env` and `service_account.json` hold real credentials — excluded via
-  `.gitignore`, never commit them.
-- Failed rows are marked `Failed: <reason>` in Status instead of being
-  retried silently. Clear the Status cell to make a row pending again.
-- The RT1 custom field values (queue, touchpoint, issue type, etc.) live in
-  `config.py` — adjust them if your RT instance differs.
